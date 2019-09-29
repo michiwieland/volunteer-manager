@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres_db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=volunteer-manager
+      - POSTGRES_USER=openairmalans
+      - POSTGRES_PASSWORD=0pEnA1rMaLanS
