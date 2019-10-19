@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Michael Wieland">
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Base</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{webjars/datatables/1.10.20/css/dataTables.bootstrap4.min.css}"/>
+    <link rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+<body class="bg-light">
+
+    <th:block layout:replace="fragments/header"></th:block>
+
+    <div id="wrapper">
+
+        <th:block layout:replace="fragments/sidebar"></th:block>
+
+        <div id="content-wrapper">
+
+            <main class="container-fluid" role="main">
+                <ol class="breadcrumb">
+                    <th:block layout:fragment="breadcrumb">
+                    </th:block>
+                </ol>
+
+                <div layout:fragment="page-content"></div>
+            </main>
+
+            <th:block layout:replace="fragments/footer"></th:block>
+
+        </div>
+
+    </div>
+
+    <th:block layout:replace="fragments/scripts"></th:block>
+
+</body>
+</html>

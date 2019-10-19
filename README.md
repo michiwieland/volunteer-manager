@@ -16,6 +16,9 @@ The volunteer manager should help to coordinate shifts of registered volunteers.
 ## Development
 1. Import project in IntelliJ IDEA
 2. Start Postgres db with `docker-compose up -d`
+3. Configure auto reload of thymeleaf templates in IntelliJ
+    - File > Settings > Build, Execution, Deployment > Compiler > Check "Build project automatically"
+    - CTRL + SHIFT + A > type "registry" > Find and check "compiler.automake.allow.when.app.running"
 
 ## Feature (Ideas)
 
