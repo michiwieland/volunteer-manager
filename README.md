@@ -6,12 +6,16 @@ The volunteer manager should help to coordinate shifts of registered volunteers.
 ![datamodel](./datamodel.png)
 
 
+### Features
+- Multi language support (i18n)
 
 ### Toolstack
 
 - Kotlin
 - Spring Boot Application with Thymeleaf Frontend
 - Postgres DB
+- JQuery 
+- Bootstrap, Datatables
 
 ## Development
 1. Import project in IntelliJ IDEA
@@ -20,7 +24,7 @@ The volunteer manager should help to coordinate shifts of registered volunteers.
     - File > Settings > Build, Execution, Deployment > Compiler > Check "Build project automatically"
     - CTRL + SHIFT + A > type "registry" > Find and check "compiler.automake.allow.when.app.running"
 
-## Feature (Ideas)
+## Feature Ideas
 
 ### Digital Food Voucher
 Each volunteer is given a computed amount of food vouchers. The vouchers are accessible through the volunteer dashboard in form of a QR-code. Once scanned the voucher redeemed.

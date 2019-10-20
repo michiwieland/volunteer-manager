@@ -2,16 +2,19 @@
   "use strict"; // Start of use strict
 
  var table = $('#volunteer-table').DataTable({
- 			"sAjaxSource": "/volunteers",
+ 			"sAjaxSource": "/volunteers/volunteers",
  			"sAjaxDataProp": "",
  			"order": [[ 0, "asc" ]],
  			"aoColumns": [
- 			    { "mData": "id"},
- 		      { "mData": "name" },
- 				  { "mData": "lastName" },
- 				  { "mData": "email" },
- 				  { "mData": "phone" },
- 				  { "mData": "active" }
+ 			     { "mData": "id"},
+ 		         { "mData": "firstName" },
+ 				 { "mData": "lastName" },
+ 				 { "mData": "email" },
+ 				 { "mData": "mobile" },
+ 				 { "mData": "gender" },
+ 				 { "mData": "birthDate" },
+ 				 { "mData": "tshirtSize" },
+ 				 { "mData": "clubMember" }
  			]
  	 });
 

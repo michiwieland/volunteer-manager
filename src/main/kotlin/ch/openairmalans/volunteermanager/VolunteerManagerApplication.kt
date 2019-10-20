@@ -16,41 +16,39 @@ import java.util.Locale
 import org.springframework.web.servlet.i18n.SessionLocaleResolver
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor
 
-
-@Configuration
-class ThymeleafLayoutConfig {
-    @Bean
-    fun layoutDialect() = LayoutDialect()
-}
-
-@Configuration
-class InternationalizationConfig : WebMvcConfigurer {
-    @Bean
-    fun localeResolver() = SessionLocaleResolver().apply {
-        setDefaultLocale(Locale.GERMAN)
-    }
-
-    @Bean
-    fun localeChangeInterceptor() = LocaleChangeInterceptor().apply {
-        paramName = "lang"
-    }
-
-    @Bean
-    fun messageSource() = ReloadableResourceBundleMessageSource().apply {
-        setBasename("classpath:i18n/messages")
-        setDefaultEncoding("UTF-8")
-    }
-
-    override fun addInterceptors(registry: InterceptorRegistry) {
-        registry.addInterceptor(localeChangeInterceptor())
-    }
-}
-
-
 @SpringBootApplication
 @EnableJpaAuditing
 class VolunteerManagerApplication
 
 fun main(args: Array<String>) {
     runApplication<VolunteerManagerApplication>(*args)
+}
+
+@Configuration
+class ThymeleafLayoutConfig {
+	@Bean
+	fun layoutDialect() = LayoutDialect()
+}
+
+@Configuration
+class InternationalizationConfig : WebMvcConfigurer {
+	@Bean
+	fun localeResolver() = SessionLocaleResolver().apply {
+		setDefaultLocale(Locale.GERMAN)
+	}
+
+	@Bean
+	fun localeChangeInterceptor() = LocaleChangeInterceptor().apply {
+		paramName = "lang"
+	}
+
+	@Bean
+	fun messageSource() = ReloadableResourceBundleMessageSource().apply {
+		setBasename("classpath:i18n/messages")
+		setDefaultEncoding("UTF-8")
+	}
+
+	override fun addInterceptors(registry: InterceptorRegistry) {
+		registry.addInterceptor(localeChangeInterceptor())
+	}
 }

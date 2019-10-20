@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<body>
+
+<!-- Breadcrumbs -->
+<th:block layout:fragment="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page" th:text="#{volunteer.volunteers}"></li>
+</th:block>
+
+
+<th:block layout:fragment="page-content">
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            <span th:text="#{volunteer.volunteers}"></span>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="volunteer-table" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th th:text="#{volunteer.firstName}"></th>
+                        <th th:text="#{volunteer.lastName}"></th>
+                        <th th:text="#{volunteer.email}"></th>
+                        <th th:text="#{volunteer.mobile}"></th>
+                        <th th:text="#{volunteer.gender}"></th>
+                        <th th:text="#{volunteer.birthDate}"></th>
+                        <th th:text="#{volunteer.tshirtSize}"></th>
+                        <th th:text="#{volunteer.clubMember}"></th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th th:text="#{volunteer.firstName}"></th>
+                        <th th:text="#{volunteer.lastName}"></th>
+                        <th th:text="#{volunteer.email}"></th>
+                        <th th:text="#{volunteer.mobile}"></th>
+                        <th th:text="#{volunteer.gender}"></th>
+                        <th th:text="#{volunteer.birthDate}"></th>
+                        <th th:text="#{volunteer.tshirtSize}"></th>
+                        <th th:text="#{volunteer.clubMember}"></th>
+                    </tr>
+                    </tfoot>
+                    <!-- body is loaded via ajax -->
+                </table>
+            </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+
+</th:block>
+
+</body>
+</html>

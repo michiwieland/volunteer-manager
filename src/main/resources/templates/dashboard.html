@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<body>
+
+<!-- Breadcrumbs -->
+<th:block layout:fragment="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page" th:text="#{dashboard.dashboard}"></li>
+</th:block>
+
+
+<th:block layout:fragment="page-content">
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            <span th:text="#{dashboard.dashboard}"></span>
+        </div>
+        <div class="card-body">
+        </div>
+    </div>
+
+</th:block>
+
+</body>
+</html>
