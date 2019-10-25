@@ -1,9 +1,11 @@
 package ch.openairmalans.volunteermanager.model
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
-import java.util.*
+import org.springframework.format.annotation.DateTimeFormat
+import java.time.LocalDate
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 
 @Entity
@@ -11,26 +13,26 @@ import javax.validation.constraints.NotBlank
 data class Volunteer(
 
         @Id @GeneratedValue(strategy = GenerationType.AUTO)
-        val id: Long = 0,
+        var id: Long = 0,
 
         @get: NotBlank
-        val firstName: String,
+        var firstName: String = "",
 
         @get: NotBlank
-        val lastName: String,
+        var lastName: String = "",
 
         @get: NotBlank
-        val email: String,
+        var email: String = "",
 
         @get: NotBlank
-        val mobile: String,
+        var mobile: String = "",
 
-        @get: NotBlank
-        val gender: UUID,
+        var birthDate: LocalDate? = null,
 
-        val tshirtSize : UUID,
+        var gender: Long = 0,
 
-        @get: NotBlank
-        val clubMember : Boolean = false
+        var tshirtSize: Long?,
+
+        var clubMember: Boolean = false
 
 ) : AuditBase()

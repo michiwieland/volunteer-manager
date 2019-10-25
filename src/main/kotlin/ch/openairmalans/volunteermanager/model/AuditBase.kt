@@ -17,18 +17,18 @@ abstract class AuditBase : Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", updatable = false)
     @CreatedDate
-    private val createdAt: Date? = null
+    var createdAt: Date? = null
 
     @Column(name = "created_by", updatable = false)
     @CreatedBy
-    private val createdBy: String? = null
+    var createdBy: String? = null
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     @LastModifiedDate
-    private val updatedAt: Date? = null
+    var updatedAt: Date? = null
 
     @Column(name = "modified_by")
     @LastModifiedBy
-    private val modifiedBy: String? = null
+    var modifiedBy: String? = null
 }

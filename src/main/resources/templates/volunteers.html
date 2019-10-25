@@ -6,15 +6,19 @@
 
 <body>
 
-<!-- Breadcrumbs -->
-<th:block layout:fragment="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page" th:text="#{volunteer.volunteers}"></li>
-</th:block>
-
-
+<!-- Content -->
 <th:block layout:fragment="page-content">
 
-    <!-- DataTables Example -->
+    <!-- Toolbar -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800" th:text="#{volunteer.volunteers}"></h1>
+        <a href="/volunteers/volunteer" class="d-none d-inline-block btn btn-primary shadow-sm">
+            <i class="fas fa-fw fa-plus-circle"></i>
+            <span th:text="#{general.new}"></span>
+        </a>
+    </div>
+
+    <!-- Cards -->
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-table"></i>
@@ -53,8 +57,6 @@
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
-
-
 </th:block>
 
 </body>
