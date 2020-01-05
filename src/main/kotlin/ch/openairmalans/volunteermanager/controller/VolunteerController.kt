@@ -19,7 +19,6 @@ class VolunteerController {
     @Autowired
     lateinit var volunteerService: VolunteerService
 
-
     @GetMapping("/")
     fun showVolunteerPage(model: Model): String {
         return "volunteers"
@@ -31,13 +30,6 @@ class VolunteerController {
         return volunteerService.findAll(input)
     }
 
-    @GetMapping("/volunteer/{volunteerId}")
-    @ResponseBody
-    fun findVolunteer(@Valid input: DataTablesInput): String {
-        model.addAttribute("volunteer", volunteerService.findById(volunteerId))
-        return "volunteer"
-    }
-
     @GetMapping(value = "/volunteer")
     fun newVolunteer(volunteer: Volunteer, model: Model): String {
         model.addAttribute("volunteer", volunteer)
@@ -47,6 +39,6 @@ class VolunteerController {
     @PostMapping(value = "/volunteer")
     fun storeVolunteer(volunteer: Volunteer, model: Model): String {
         volunteerService.save(volunteer);
-        return "volunteer"
+        return "volunteers"
     }
 }

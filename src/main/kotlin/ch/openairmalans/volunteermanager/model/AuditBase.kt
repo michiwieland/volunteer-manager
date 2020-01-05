@@ -26,7 +26,7 @@ abstract class AuditBase : Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     @LastModifiedDate
-    var updatedAt: Date? = null
+    var modifiedAt: Date? = null
 
     @Column(name = "modified_by")
     @LastModifiedBy
